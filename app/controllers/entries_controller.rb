@@ -10,7 +10,7 @@ class EntriesController < ApplicationController
     def create
         @entry = Entry.new(entry_params)
         if @entry.save
-            redirect_to_root_url
+            redirect_to root_url
         else
             render :new
         end
@@ -19,6 +19,6 @@ class EntriesController < ApplicationController
     private
 
     def entry_params
-        params.require(:entry).permit(:name)
+        params.require(:entry).permit(:name, :link)
     end
 end
