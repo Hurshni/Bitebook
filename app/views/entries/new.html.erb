@@ -2,7 +2,7 @@
   <div class="row justify-content-center">
     <div class="col-md-6"> <!-- Adjust column size as needed -->
       <h1>New Entry</h1>
-
+      
       <%= form_with(model: @entry) do |form| %>
         <div class="form-group">
           <%= form.label :name %>
@@ -27,3 +27,28 @@
     </div>
   </div>
 </div>
+
+
+<div class="nhsuk-width-container">
+  <div class="nhsuk-form-group">
+    <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
+      <legend class="nhsuk-fieldset__legend nhsuk-label--l">
+        <h1 class="nhsuk-fieldset__heading">
+          Breakfast
+        </h1>
+      </legend>
+      <div class="nhsuk-hint" id="example-hint">
+        For example, oats, yoghurt, blueberries
+      </div>
+
+      <div class="nhsuk-form-group">
+  <label class="nhsuk-label" for="input-width-20">
+
+  </label>
+  <input class="nhsuk-input nhsuk-input--width-20" id="input-width-20" name="test-width-20" type="text">
+</div>
+    </fieldset>
+
+    </div>
+  </div>
+

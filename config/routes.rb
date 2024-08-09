@@ -12,4 +12,7 @@ end
 Rails.application.routes.draw do
   root 'entries#index'
   resources :entries, only: [:create, :new, :destroy]
+  get 'track_your_health',to: 'entries#track_your_health'
 end
+
+
