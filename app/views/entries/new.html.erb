@@ -1,18 +1,29 @@
-<h1>New Entry</h1>
-<%= form_with(model: @entry) do |form| %>
- <div>
-   <%= form.label :name %>
-   <%= form.text_field :name %>
-   <%= form.label :link %>
-   <%= form.text_field :link %>
- </div>
- <div>
-   <%= form.submit %>
- </div>
-<% end %>
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6"> <!-- Adjust column size as needed -->
+      <h1>New Entry</h1>
 
-<br>
+      <%= form_with(model: @entry) do |form| %>
+        <div class="form-group">
+          <%= form.label :name %>
+          <%= form.text_field :name, class: 'form-control' %>
+        </div>
 
-<div>
- <%= link_to "Back to home", root_path %>
+        <div class="form-group">
+          <%= form.label :link %>
+          <%= form.text_field :link, class: 'form-control' %>
+        </div>
+
+        <div>
+          <%= form.submit 'Create Entry', class: 'btn btn-primary' %>
+        </div>
+      <% end %>
+
+      <br>
+
+      <div>
+        <%= link_to "Back to home", root_path, class: 'btn btn-secondary' %>
+      </div>
+    </div>
+  </div>
 </div>
