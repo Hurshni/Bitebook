@@ -27,20 +27,21 @@ class EntriesController < ApplicationController
     end
     
     def create_symptom_log
-        @symptom_log = SymptomLog.new(symptom_log_params)
-        if @symptom_log.save
-          redirect_to your_symptoms_path, notice: 'Symptom log was successfully created.'
-        else
-          @symptom_logs = SymptomLog.all
-          render :your_symptoms
-        end
-    end
-    
-      def destroy_symptom_log
-        @symptom_log = SymptomLog.find(params[:id])
-        @symptom_log.destroy
-        redirect_to your_symptoms_path, notice: 'Symptom log was successfully deleted.'
+      @symptom_log = SymptomLog.new(symptom_log_params)
+  
+      # Combine day, month, and year into a single date
+      if params[:symptom_log][:day].present? && params[:symptom_log][:month].present? && params[:symptom_log][:year].present?
+        date_str = "#{params[:symptom_log][:year]}-#{params[:symptom_log][:month]}-#{params[:symptom_log][:day]}"
+        @symptom_log.date = Date.parse(date_str) rescue nil
       end
+  
+      if @symptom_log.save
+        redirect_to your_symptoms_path, notice: 'Symptom log was successfully created.'
+      else
+        @symptom_logs = SymptomLog.all
+        render :your_symptoms
+      end
+    end
   
     def destroy_symptom_log
         @symptom_log = SymptomLog.find(params[:id])
@@ -55,6 +56,7 @@ class EntriesController < ApplicationController
     end
   
     def symptom_log_params
-        params.require(:symptom_log).permit(:date, :symptom, :severity, :start_time, :end_time)
+      params.require(:symptom_log).permit(:symptom, :severity, :start_time, :end_time, :date)
     end
+    
 end  

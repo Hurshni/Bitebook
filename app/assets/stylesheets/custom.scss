@@ -1,18 +1,47 @@
+/* General Styling */
+.nhsuk-select {
+  display: block;
+  width: 100%; /* Full width if needed */
+  box-sizing: border-box; /* Ensure padding and border are included in the width */
+  padding: 0.5rem; /* Adjust padding as needed */
+  font-size: 1rem; /* Adjust font size as needed */
+  font-family: "Frutiger W01", sans-serif; /* Use NHS font family */
+}
+
+/* Button Container */
 .button-container {
   display: flex;
-  align-items: center;
+  align-items: flex-end; /* Align items to the bottom */
   gap: 10px; /* Space between buttons and 'or' text */
-  margin-bottom: 40px; /* Adjust this value to create space below the div */
+  margin-bottom: 40px; /* Space below the div */
 }
 
+/* Remove default margin for paragraph */
 .button-container > p.nhsuk-body {
-  margin: 0 10px; /* Space around the 'or' text */
+  margin: 0; /* Remove margin around 'or' text */
+  line-height: 1; /* Ensure consistent vertical alignment */
 }
 
-.button-container > button {
+/* Remove default margin for buttons */
+.button-container > .nhsuk-button {
+  margin: 0; /* Remove margin around buttons */
+  padding: 0.5rem 1rem; /* Ensure padding for buttons (adjust if needed) */
+  line-height: 1.5; /* Ensure consistent vertical alignment */
+}
+
+/* Flex container for buttons and text */
+.button-container {
+  display: flex;
+  align-items: flex-end; /* Align items to the bottom */
+  gap: 10px; /* Adjust spacing between items as needed */
+}
+
+/* Remove any extra margin */
+.nhsuk-button {
   margin: 0; /* Ensure no extra margin around buttons */
 }
 
+/* Header Styles */
 #nhs-dynamic-page-title header {
   margin-bottom: 10px; /* Minimal space between <h1> and <p> */
 }
@@ -25,14 +54,47 @@
   margin: 5px 0 40px; /* Minimal space above, normal space below the <p> */
 }
 
-.nhsuk-select {
-  display: block;
-  width: 100%; /* Full width if needed */
-  box-sizing: border-box; /* Ensure padding and border are included in the width */
-  padding: 0.5rem; /* Adjust padding as needed */
-  font-size: 1rem; /* Adjust font size as needed */
-  font-family:"Frutiger W01";font-style:normal;font-weight:400 /* Use NHS font family */
+/* Styling for Radio Buttons */
+.nhsuk-radios {
+  display: flex;
+  align-items: center; /* Align radio buttons and labels vertically */
 }
+
+.nhsuk-radios--inline {
+  display: flex; /* Align items horizontally */
+  align-items: center; /* Align items to the bottom */
+}
+
+.nhsuk-radios__item {
+  display: flex;
+  align-items: center;
+  margin-right: 10px; /* Space between radio items */
+}
+
+.nhsuk-radios__input {
+  margin-right: 5px; /* Space between radio input and label */
+}
+
+/* Additional Flexbox Adjustments */
+.flex-container {
+  display: flex;
+  align-items: center; /* Adjust vertical alignment as needed */
+}
+
+/* Other Styles */
+.nhsuk-form-group {
+  margin-bottom: 20px; /* Space between form groups */
+}
+
+/* Ensure form inputs and labels are consistently styled */
+.nhsuk-label {
+  font-weight: bold; /* Emphasize labels */
+}
+
+.nhsuk-input {
+  box-sizing: border-box; /* Ensure padding and border are included in the width */
+}
+
 
 
 
