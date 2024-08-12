@@ -1,0 +1,27 @@
+.button-container {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Space between buttons and 'or' text */
+  margin-bottom: 40px; /* Adjust this value to create space below the div */
+}
+
+.button-container > p.nhsuk-body {
+  margin: 0 10px; /* Space around the 'or' text */
+}
+
+.button-container > button {
+  margin: 0; /* Ensure no extra margin around buttons */
+}
+
+#nhs-dynamic-page-title header {
+  margin-bottom: 10px; /* Minimal space between <h1> and <p> */
+}
+
+#nhs-dynamic-page-title h1 {
+  margin: 0; /* Ensure no extra margin around <h1> */
+}
+
+#nhs-dynamic-page-title p {
+  margin: 5px 0 40px; /* Minimal space above, normal space below the <p> */
+}
+

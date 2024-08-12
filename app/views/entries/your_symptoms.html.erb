@@ -49,9 +49,11 @@
 
     </div>
 
-    <button class="nhsuk-button nhsuk-button--secondary" data-module="nhsuk-button" type="submit">
-        Or select today's date
-    </button>
+    <div class="button-container">
+        <button class="nhsuk-button nhsuk-button--secondary" data-module="nhsuk-button" type="submit">
+            Or select today's date
+        </button>
+    </div>
 
     <div class="nhsuk-form-group">
         <legend class="nhsuk-fieldset__legend nhsuk-label--l">
@@ -100,36 +102,38 @@
         </fieldset>
     </div>
 
-    <div class="nhsuk-form-group">
-        <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
-            <legend class="nhsuk-fieldset__legend nhsuk-label--m">
-            <h1 class="nhsuk-fieldset__heading">
-                How long did the symptom last?
-            </h1>
-            </legend>
+    <div class="button-container">
+        <div class="nhsuk-form-group">
+            <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
+                <legend class="nhsuk-fieldset__legend nhsuk-label--m">
+                <h1 class="nhsuk-fieldset__heading">
+                    How long did the symptom last?
+                </h1>
+                </legend>
 
-            <div class="nhsuk-date-input" id="example">
-            <div class="nhsuk-date-input__item">
-                <div class="nhsuk-form-group">
-                <label class="nhsuk-label nhsuk-date-input__label" for="example-day">
-                    Start time
-                </label>
-                <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4" id="example-day" name="example-day" type="text" inputmode="numeric">
+                <div class="nhsuk-date-input" id="example">
+                <div class="nhsuk-date-input__item">
+                    <div class="nhsuk-form-group">
+                    <label class="nhsuk-label nhsuk-date-input__label" for="example-day">
+                        Start time
+                    </label>
+                    <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4" id="example-day" name="example-day" type="text" inputmode="numeric">
+                    </div>
                 </div>
-            </div>
-            <div class="nhsuk-date-input__item">
-                <div class="nhsuk-form-group">
-                <label class="nhsuk-label nhsuk-date-input__label" for="example-day">
-                    End time
-                </label>
-                <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4" id="example-day" name="example-day" type="text" inputmode="numeric">
+                <div class="nhsuk-date-input__item">
+                    <div class="nhsuk-form-group">
+                    <label class="nhsuk-label nhsuk-date-input__label" for="example-day">
+                        End time
+                    </label>
+                    <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4" id="example-day" name="example-day" type="text" inputmode="numeric">
+                    </div>
                 </div>
-            </div>
-            </div>
-        </fieldset>
+                </div>
+            </fieldset>
+        </div>
     </div>
 
-    <div>
+    <div class="button-container">
         <button class="nhsuk-button nhsuk-button--secondary" data-module="nhsuk-button" type="submit">
             Add symptom
         </button>
@@ -138,6 +142,7 @@
             Add from yesterday's log
         </button>
     </div>
+
 
     <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
         Create symptom log
