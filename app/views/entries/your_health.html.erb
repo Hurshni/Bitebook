@@ -5,7 +5,7 @@
         <h1 class="nhs-heading-01 nhs-greeting-block">Your health</h1>
       </header>
       <header>
-        <h2 class="sub-heading">View your personal records and choices</h2>
+        <span class="nhsuk-caption-m">View your personal records and choices</span>
       </header>
     </div>
 
@@ -71,7 +71,7 @@
           <div class="nhsuk-card__content nhsuk-card__content--primary nhsuk-card__content-with-chevron">
             <div class="heading-container">
               <div class="nhsuk-card__heading nhsuk-heading-s nhsuk-u-margin-bottom-0">
-                <a href="/patient/health-choices" class="nhsuk-card__link">Your health choices</a>
+                <a <%= link_to "Your health choices", your_health_choices_path %></a>
               </div>
             </div>
           </div>

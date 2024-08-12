@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   resources :entries, only: [:create, :new, :destroy]
   get 'track_your_health',to: 'entries#track_your_health'
   get 'your_health',to: 'entries#your_health'
+  get 'your_health_choices',to: 'entries#your_health_choices'
 end
 
 
