@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   get 'your_health_choices',to: 'entries#your_health_choices'
   get 'your_symptoms',to: 'entries#your_symptoms'
   get 'food_intake',to: 'entries#food_intake'
+  get 'view_your_health_patterns',to: 'entries#view_your_health_patterns'
 end
 
 
