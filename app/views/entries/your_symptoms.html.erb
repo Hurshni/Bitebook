@@ -1,161 +1,74 @@
 <main id="maincontent" class="webLayout">
   <div class="nhsuk-width-container">
 
-    <div id="nhs-dynamic-page-title" aria-hidden="false" class="nhs-dynamic-page-title">
-        <header>
-            <h1 class="nhs-heading-01 nhs-greeting-block">Track your symptoms</h1>
-        </header>
-        <p class="nhsuk-body">Keep track of the severity of your symptoms with our symptom tracker</p>
-    </div>
-
-    <div class="nhsuk-form-group">
-        <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
-            <legend class="nhsuk-fieldset__legend nhsuk-label--l">
-            <h1 class="nhsuk-fieldset__heading">
-                Date
-            </h1>
-            </legend>
-            <div class="nhsuk-hint" id="example-hint">
-            Log the date you felt your symptom(s). Or select today's date to autofill the boxes below.
-            </div>
-
-            <div class="nhsuk-date-input" id="example">
-            <div class="nhsuk-date-input__item">
-                <div class="nhsuk-form-group">
-                <label class="nhsuk-label nhsuk-date-input__label" for="example-day">
-                    Day
-                </label>
-                <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="example-day" name="example-day" type="text" inputmode="numeric">
-                </div>
-            </div>
-            <div class="nhsuk-date-input__item">
-                <div class="nhsuk-form-group">
-                <label class="nhsuk-label nhsuk-date-input__label" for="example-month">
-                    Month
-                </label>
-                <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="example-month" name="example-month" type="text" inputmode="numeric">
-                </div>
-            </div>
-            <div class="nhsuk-date-input__item">
-                <div class="nhsuk-form-group">
-                <label class="nhsuk-label nhsuk-date-input__label" for="example-year">
-                    Year
-                </label>
-                <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4" id="example-year" name="example-year" type="text" inputmode="numeric">
-                </div>
-            </div>
-            </div>
-        </fieldset>
-
-    </div>
-
-    <div class="button-container">
-        <button class="nhsuk-button nhsuk-button--secondary" data-module="nhsuk-button" type="submit">
-            Or select today's date
-        </button>
-    </div>
-
-    <div class="nhsuk-form-group">
-        <legend class="nhsuk-fieldset__legend nhsuk-label--l">
-            <h1 class="nhsuk-fieldset__heading">
-                Symptom(s)
-            </h1>
-        </legend>
-        <div class="nhsuk-hint" id="example-with-hint-text-hint">
-            Select your symptom(s) from the list below
+    <!-- Form for creating a new SymptomLog -->
+    <%= form_with model: @symptom_log, url: your_symptoms_path, local: true do |form| %>
+      <div class="nhsuk-form-group">
+        <%= form.label :date, class: 'nhsuk-label' %>
+        <%= form.text_field :date, class: 'nhsuk-input' %>
+      </div>
+      <div class="nhsuk-form-group">
+        <%= form.label :symptom, class: 'nhsuk-label' %>
+        <%= form.select :symptom, options_for_select(['Abdominal bloating', 'Abdominal cramping', 'Abdominal distension', 'Abdominal pain']), { include_blank: 'Select a symptom' }, class: 'nhsuk-select' %>
+      </div>
+      <div class="nhsuk-form-group">
+        <%= form.label :severity, class: 'nhsuk-label' %>
+        <div class="nhsuk-radios nhsuk-radios--inline">
+          <%= form.radio_button :severity, 'Mild', id: 'severity_mild' %>
+          <%= form.label :severity_mild, 'Mild', class: 'nhsuk-label nhsuk-radios__label' %>
+          <%= form.radio_button :severity, 'Moderate', id: 'severity_moderate' %>
+          <%= form.label :severity_moderate, 'Moderate', class: 'nhsuk-label nhsuk-radios__label' %>
+          <%= form.radio_button :severity, 'Severe', id: 'severity_severe' %>
+          <%= form.label :severity_severe, 'Severe', class: 'nhsuk-label nhsuk-radios__label' %>
         </div>
-        <select class="nhsuk-select nhsuk-u-width-one-half" id="example-with-hint-text" name="example-with-hint-text" aria-describedby="example-with-hint-text-hint">
-            <option value="">-- Select a symptom --</option>
-            <option value="Abdominal bloating">Abdominal bloating</option>
-            <option value="Abdominal cramping">Abdominal cramping</option>
-            <option value="Abdominal distension">Abdominal distension</option>
-            <option value="Abdominal pain">Abdominal pain</option>
-            <!-- Add more options as needed -->
-        </select>
-    </div>
+      </div>
+      <div class="nhsuk-form-group">
+        <%= form.label :start_time, class: 'nhsuk-label' %>
+        <%= form.text_field :start_time, class: 'nhsuk-input', type: 'datetime-local' %>
+      </div>
+      <div class="nhsuk-form-group">
+        <%= form.label :end_time, class: 'nhsuk-label' %>
+        <%= form.text_field :end_time, class: 'nhsuk-input', type: 'datetime-local' %>
+      </div>
+      <div class="button-container">
+        <%= form.submit 'Add symptom', class: 'nhsuk-button nhsuk-button--secondary' %>
+      </div>
+    <% end %>
 
-# radio buttons
-    <div class="nhsuk-form-group">
-        <fieldset class="nhsuk-fieldset">
-            <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--m">
-            <h1 class="nhsuk-fieldset__heading">
-                How strong was the symptom?
-            </h1>
-            </legend>
-
-            <div class="nhsuk-radios nhsuk-radios--inline">
-
-            <div class="nhsuk-radios__item">
-                <input class="nhsuk-radios__input" id="example-inline-1" name="example-inline" type="radio" value="yes">
-                <label class="nhsuk-label nhsuk-radios__label" for="example-inline-1">
-                Mild
-                </label>
-            </div>
-
-            <div class="nhsuk-radios__item">
-                <input class="nhsuk-radios__input" id="example-inline-2" name="example-inline" type="radio" value="no">
-                <label class="nhsuk-label nhsuk-radios__label" for="example-inline-2">
-                Moderate
-                </label>
-            </div>
-
-            <div class="nhsuk-radios__item">
-                <input class="nhsuk-radios__input" id="example-inline-3" name="example-inline" type="radio" value="no">
-                <label class="nhsuk-label nhsuk-radios__label" for="example-inline-3">
-                Severe
-                </label>
-            </div>
-
-            </div>
-        </fieldset>
-    </div>
-
-    # start and end time
-    <div class="button-container">
-        <div class="nhsuk-form-group">
-            <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
-                <legend class="nhsuk-fieldset__legend nhsuk-label--m">
-                    <h1 class="nhsuk-fieldset__heading">
-                        How long did the symptom last?
-                    </h1>
-                </legend>
-
-                <div class="nhsuk-date-input" id="example">
-                    <div class="nhsuk-date-input__item">
-                        <div class="nhsuk-form-group">
-                            <label class="nhsuk-label nhsuk-date-input__label" for="example-day">
-                                Start time
-                            </label>
-                            <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4" id="example-day" name="example-day" type="text" inputmode="numeric">
-                        </div>
-                    </div>
-                    <div class="nhsuk-date-input__item">
-                        <div class="nhsuk-form-group">
-                            <label class="nhsuk-label nhsuk-date-input__label" for="example-day">
-                                End time
-                            </label>
-                            <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4" id="example-day" name="example-day" type="text" inputmode="numeric">
-                        </div>
-                    </div>
-                </div>
-            </fieldset>
-        </div>
-    </div>
-
-    <div class="button-container">
-        <button class="nhsuk-button nhsuk-button--secondary" data-module="nhsuk-button" type="submit">
-            Add symptom
-        </button>
-        <p class="nhsuk-body">or</p>
-        <button class="nhsuk-button nhsuk-button--secondary" data-module="nhsuk-button" type="submit">
-            Add from yesterday's log
-        </button>
-    </div>
-
-
-    <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
-        Create symptom log
-    </button>
-
- </div>
+    <!-- Table displaying existing symptom logs -->
+    <table class="nhsuk-table">
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Symptom</th>
+          <th>Severity</th>
+          <th>Start Time</th>
+          <th>End Time</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @symptom_logs.each do |log| %>
+          <tr>
+            <td><%= log.date %></td>
+            <td><%= log.symptom %></td>
+            <td><%= log.severity %></td>
+            <td><%= log.start_time.strftime("%Y-%m-%d %H:%M") if log.start_time %></td>
+            <td><%= log.end_time.strftime("%Y-%m-%d %H:%M") if log.end_time %></td>
+            <td>
+              <%= form_with(model: log, url: destroy_symptom_log_path(log), method: :delete, local: true) do |form| %>
+                <%= form.submit 'Delete', class: 'nhsuk-button nhsuk-button--warning' %>
+              <% end %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
 </main>
+
+
+
+
+    
+  

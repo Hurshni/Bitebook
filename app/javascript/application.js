@@ -2,3 +2,8 @@
 import "@hotwired/turbo-rails"
 import "controllers"
 
+//= require rails-ujs
+//= require activestorage
+//= require_tree .
+import Rails from '@rails/ujs';
+Rails.start();

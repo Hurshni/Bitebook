@@ -11,13 +11,22 @@ end
 
 Rails.application.routes.draw do
   root 'entries#index'
+  
   resources :entries, only: [:create, :new, :destroy]
-  get 'track_your_health',to: 'entries#track_your_health'
-  get 'your_health',to: 'entries#your_health'
-  get 'your_health_choices',to: 'entries#your_health_choices'
-  get 'your_symptoms',to: 'entries#your_symptoms'
-  get 'food_intake',to: 'entries#food_intake'
-  get 'view_your_health_patterns',to: 'entries#view_your_health_patterns'
+
+  # Routes for SymptomLogs using the `entries` controller
+  get 'your_symptoms', to: 'entries#your_symptoms'
+  post 'your_symptoms', to: 'entries#create_symptom_log'
+  delete 'your_symptoms/:id', to: 'entries#destroy_symptom_log', as: 'destroy_symptom_log'
+  
+  # Other routes
+  get 'track_your_health', to: 'entries#track_your_health'
+  get 'your_health', to: 'entries#your_health'
+  get 'your_health_choices', to: 'entries#your_health_choices'
+  get 'food_intake', to: 'entries#food_intake'
+  get 'view_your_health_patterns', to: 'entries#view_your_health_patterns'
 end
+
+
 
 

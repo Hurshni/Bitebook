@@ -1,0 +1,2 @@
+class SymptomLog < ApplicationRecord
+end
