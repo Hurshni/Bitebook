@@ -55,7 +55,6 @@
         </button>
     </div>
 
-    # dropdown for symptoms
     <div class="nhsuk-form-group">
         <legend class="nhsuk-fieldset__legend nhsuk-label--l">
             <h1 class="nhsuk-fieldset__heading">
@@ -75,7 +74,7 @@
         </select>
     </div>
 
-# radio buttons for symptom severity
+# radio buttons
     <div class="nhsuk-form-group">
         <fieldset class="nhsuk-fieldset">
             <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--m">
@@ -111,44 +110,37 @@
         </fieldset>
     </div>
 
-    # Start time and end time
+    # start and end time
     <div class="button-container">
         <div class="nhsuk-form-group">
             <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
-            <legend class="nhsuk-fieldset__legend nhsuk-label--m">
-                <h1 class="nhsuk-fieldset__heading">
-                How long did the symptom last?
-                </h1>
-            </legend>
+                <legend class="nhsuk-fieldset__legend nhsuk-label--m">
+                    <h1 class="nhsuk-fieldset__heading">
+                        How long did the symptom last?
+                    </h1>
+                </legend>
 
-            <div class="nhsuk-date-input" id="example">
-                <div class="nhsuk-date-input__item">
-                <div class="nhsuk-form-group">
-                    <label class="nhsuk-label nhsuk-date-input__label" for="start-time">
-                    Start time
-                    </label>
-                    <div class="input-wrapper">
-                    <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4" id="start-time" name="start-time" type="text" inputmode="numeric" >
+                <div class="nhsuk-date-input" id="example">
+                    <div class="nhsuk-date-input__item">
+                        <div class="nhsuk-form-group">
+                            <label class="nhsuk-label nhsuk-date-input__label" for="example-day">
+                                Start time
+                            </label>
+                            <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4" id="example-day" name="example-day" type="text" inputmode="numeric">
+                        </div>
+                    </div>
+                    <div class="nhsuk-date-input__item">
+                        <div class="nhsuk-form-group">
+                            <label class="nhsuk-label nhsuk-date-input__label" for="example-day">
+                                End time
+                            </label>
+                            <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4" id="example-day" name="example-day" type="text" inputmode="numeric">
+                        </div>
                     </div>
                 </div>
-                </div>
-                <div class="nhsuk-date-input__item">
-                <div class="nhsuk-form-group">
-                    <label class="nhsuk-label nhsuk-date-input__label" for="end-time">
-                    End time
-                    </label>
-                    <div class="input-wrapper">
-                    <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4" id="end-time" name="end-time" type="text" inputmode="numeric" >
-                    </div>
-                </div>
-                </div>
-            </div>
             </fieldset>
         </div>
     </div>
-
-
-
 
     <div class="button-container">
         <button class="nhsuk-button nhsuk-button--secondary" data-module="nhsuk-button" type="submit">

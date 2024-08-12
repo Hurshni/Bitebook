@@ -35,25 +35,6 @@
 }
 
 
-.input-wrapper {
-  position: relative;
-  display: inline-block;
-}
-
-.input-wrapper input {
-  text-align: center; /* Center text inside the input */
-  padding-right: 20px; /* Ensure enough space for the colon */
-}
-
-.input-wrapper::after {
-  content: ":";
-  position: absolute;
-  right: 50%; /* Center the colon within the input field */
-  top: 50%;
-  transform: translate(50%, -50%); /* Center the colon vertically and horizontally */
-  font-size: 16px; /* Adjust size to fit your design */
-  color: #6c757d; /* Adjust color to fit your design */
-}
 
 
 
