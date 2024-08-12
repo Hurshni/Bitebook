@@ -25,3 +25,11 @@
   margin: 5px 0 40px; /* Minimal space above, normal space below the <p> */
 }
 
+.nhsuk-select {
+  display: block;
+  width: 100%; /* Full width if needed */
+  box-sizing: border-box; /* Ensure padding and border are included in the width */
+  padding: 0.5rem; /* Adjust padding as needed */
+  font-size: 1rem; /* Adjust font size as needed */
+  font-family:"Frutiger W01";font-style:normal;font-weight:400 /* Use NHS font family */
+}

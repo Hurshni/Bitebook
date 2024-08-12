@@ -57,15 +57,23 @@
 
     <div class="nhsuk-form-group">
         <legend class="nhsuk-fieldset__legend nhsuk-label--l">
-        <h1 class="nhsuk-fieldset__heading">
-            Symptom(s)
-        </h1>
+            <h1 class="nhsuk-fieldset__heading">
+                Symptom(s)
+            </h1>
         </legend>
         <div class="nhsuk-hint" id="example-with-hint-text-hint">
-            Enter your symptom(s) in the box below
+            Select your symptom(s) from the list below
         </div>
-        <input class="nhsuk-input nhsuk-input nhsuk-u-width-one-half" id="example-with-hint-text" name="example-with-hint-text" type="text" aria-describedby="example-with-hint-text-hint">
-    </div> 
+        <select class="nhsuk-select nhsuk-u-width-one-half" id="example-with-hint-text" name="example-with-hint-text" aria-describedby="example-with-hint-text-hint">
+            <option value="">-- Select a symptom --</option>
+            <option value="Abdominal bloating">Abdominal bloating</option>
+            <option value="Abdominal cramping">Abdominal cramping</option>
+            <option value="Abdominal distension">Abdominal distension</option>
+            <option value="Abdominal pain">Abdominal pain</option>
+            <!-- Add more options as needed -->
+        </select>
+    </div>
+
 
     <div class="nhsuk-form-group">
         <fieldset class="nhsuk-fieldset">
