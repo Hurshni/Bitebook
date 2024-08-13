@@ -95,8 +95,29 @@
   box-sizing: border-box; /* Ensure padding and border are included in the width */
 }
 
+// Flex container for time fields and separator
+.time-fields-container {
+  display: flex;
+  align-items: flex-start; // Align items to the start
+  gap: 16px; // Space between elements
+  margin-bottom: 20px; // Adjust space below the container if needed
+}
 
+// Style for the separator
+.time-separator {
+  display: flex;
+  align-items: center; // Center 'or' text vertically
+  margin: 0 12px; // Space around the 'or' text
+}
 
+// Ensure each time field and its label are properly aligned
+.time-field {
+  display: flex;
+  flex-direction: column; // Stack label and input vertically
+  align-items: flex-start; // Align items to the start of the container
+}
 
-
-
+// Ensure input fields have consistent styling
+.nhsuk-input--width-3 {
+  width: 100px; // Set a fixed width or adjust as needed
+}
