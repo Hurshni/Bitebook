@@ -121,3 +121,8 @@
 .nhsuk-input--width-3 {
   width: 100px; // Set a fixed width or adjust as needed
 }
+
+/* Add space above the entire title container */
+#nhs-dynamic-page-title {
+  margin-top: 40px; /* Adjust this value to set the space you want */
+}
